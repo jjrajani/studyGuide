@@ -6,12 +6,12 @@ export class Guide {
   title: "string";
 }
 
-class NewGuideStore {
+class GuideStore {
     guide: IGuide = new Guide();
     init() {
         console.log('init new guide', this.guide)
     }
 }
 
-let newGuideStore = new NewGuideStore();
-export default newGuideStore;
+let guideStore = new GuideStore();
+export default guideStore;
