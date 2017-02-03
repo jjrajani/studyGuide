@@ -1,6 +1,6 @@
-import * as React from 'react';
-import './style.scss';
-import Header from '../header';
+import * as React from "react";
+import "./style.scss";
+import Header from "../header";
 
 class App extends React.Component<{}, {}> {
   render() {

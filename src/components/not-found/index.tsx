@@ -1,5 +1,5 @@
-import * as React from 'react';
-import './style.scss';
+import * as React from "react";
+import "./style.scss";
 
 export default class NotFound extends React.Component<{}, {}> {
   // static propTypes = {}

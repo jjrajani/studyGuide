@@ -1,6 +1,6 @@
-import * as React from 'react';
-import './style.scss';
-import { ILink } from './link';
+import * as React from "react";
+import "./style.scss";
+import { ILink } from "./link";
 
 class Nav extends React.Component<{links: Array<ILink>}, {}> {
 
@@ -8,7 +8,7 @@ class Nav extends React.Component<{links: Array<ILink>}, {}> {
     return (
       <div className="nav">
         <ul className="links">
-          { this.renderLinks() }
+          {this.renderLinks()}
         </ul>
       </div>
     );
@@ -20,8 +20,8 @@ class Nav extends React.Component<{links: Array<ILink>}, {}> {
         <li className="link">
           <a href={link.link} target={link.target || ""}>{link.text}</a>
         </li>
-      )
-    })
+      );
+    });
   }
 }
 

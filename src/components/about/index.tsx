@@ -1,7 +1,7 @@
-import * as React from 'react';
-import './style.scss';
+import * as React from "react";
+import "./style.scss";
 
-export default class About extends React.Component<{},{}> {
+export default class About extends React.Component<{}, {}> {
   // static propTypes = {}
   // static defaultProps = {}
   // state = {}

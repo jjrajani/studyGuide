@@ -1,14 +1,18 @@
-import * as React from 'react';
-import './style.scss';
-import Nav from '../nav';
-import links from './links';
+import * as React from "react";
+import "./style.scss";
+import Nav from "../nav";
+import links from "./links";
 
-export interface ILink { text: string, link: string, target?: string };
+export interface Link {
+  text: string;
+  link: string;
+  target?: string;
+};
 
 class Header extends React.Component<{}, {}> {
 
   render() {
-    const logo = require('./logo.svg');
+    const logo = require("./logo.svg");
     return (
       <div id="header">
         <img src={logo} className="logo" alt="logo" />
