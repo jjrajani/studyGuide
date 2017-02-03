@@ -16,7 +16,7 @@ class Header extends React.Component<{}, {}> {
     return (
       <div id="header">
         <img src={logo} className="logo" alt="logo" />
-        <h2>React template Pre-packed with...</h2>
+        <h2>studyGuide</h2>
         <Nav links={links}/>
       </div>
     );

@@ -2,24 +2,16 @@ import { ILink } from "../nav/link";
 
 const links: Array<ILink> = [
   {
-    text: "TypeScript",
-    target: "_blank",
-    link: "https://www.typescriptlang.org/docs/tutorial.html"
+    text: "Dashboard",
+    link: "/dashboard"
   },
   {
-    text: "React-Router",
-    target: "_blank",
-    link: "https://github.com/ReactTraining/react-router"
+    text: "Guides",
+    link: "/guide"
   },
   {
-    text: "SASS Loader",
-    target: "_blank",
-    link: "https://github.com/jtangelder/sass-loader"
-  },
-  {
-    text: "GitHub",
-    target: "_blank",
-    link: "https://github.com/jjrajani/react-template"
+    text: "New Guide",
+    link: "/guide/new"
   },
 ];
 
