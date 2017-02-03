@@ -10,6 +10,7 @@ class App extends React.Component<{}, {}> {
         <p className="app-intro">
           To get started, edit <code>src/components/index.tsx</code> and save to reload.
         </p>
+        {this.props.children}
       </div>
     );
   }

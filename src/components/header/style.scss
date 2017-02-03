@@ -6,27 +6,6 @@
     animation: logo-spin infinite 20s linear;
     height: 80px;
   }
-  .links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    padding: 0;
-    label {
-      padding: 0.5rem;
-    }
-    .link {
-      padding: 0.5rem;
-      border-left: solid 2px #61DAFB;
-      &:first-child {
-        border-left: none;
-      }
-      a {
-        color: #61DAFB;
-        text-decoration: none;
-      }
-    }
-  }
 }
 
 @keyframes logo-spin {

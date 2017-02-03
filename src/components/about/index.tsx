@@ -9,9 +9,7 @@ export default class About extends React.Component<{},{}> {
   render() {
     return (
       <div id="about">
-        <h1>
-          About
-        </h1>
+        <h1><a href="https://github.com/jjrajani" target="_blank">humdrum</a></h1>
       </div>
     );
   }
