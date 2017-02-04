@@ -25,6 +25,9 @@ export default class GuideList extends React.Component<GuideListProps, GuideList
   render() {
     return (
       <div id="guide-list">
+        <div className="row">
+          <h3>Guides</h3>
+        </div>
         <ul className="guide-list">
           {this.list(guideStore.guides)}
         </ul>

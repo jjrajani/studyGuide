@@ -46,10 +46,27 @@ export default class GuideListItem extends React.Component<GuideListItemProps, G
           to={`/guide/${guide.id}`}
         >{guide.title}
         </Link>
-        <p
-          onClick={this.toggleDescription}
-          className={this.state.showDescription ? "toggle-descript active" : "toggle-descript"}>></p>
+        { this.state.showDescription ? this.hideDesciption() : this.showDescription() }
       </div>
+    );
+  }
+
+  private showDescription = () => {
+    return (
+      <i
+        onClick={this.toggleDescription}
+        className="fa fa-arrow-circle-o-right toggle-descript"
+        aria-hidden="true">
+      </i>
+    );
+  }
+  private hideDesciption = () => {
+    return (
+      <i
+        onClick={this.toggleDescription}
+        className="fa fa-arrow-circle-o-left toggle-descript active"
+        aria-hidden="true">
+      </i>
     );
   }
 
@@ -69,7 +86,9 @@ export default class GuideListItem extends React.Component<GuideListItemProps, G
     return (
       <Link
         className="edit-guide"
-        to={`/guide/edit/${id}`} >Edit</Link>
+        to={`/guide/edit/${id}`}
+      ><i className="fa fa-pencil-square-o" aria-hidden="true"></i>
+      </Link>
     );
   }
 }

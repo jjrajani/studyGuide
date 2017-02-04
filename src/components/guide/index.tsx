@@ -11,9 +11,6 @@ export default class Guide extends React.Component<{}, {}> {
   render() {
     return (
       <div id="guide">
-        <div className="row">
-          <h3>Guides</h3>
-        </div>
         <GuideList />
       </div>
     );
