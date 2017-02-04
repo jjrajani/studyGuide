@@ -17,7 +17,8 @@ class GuideStore {
     }
 
     public create = (guide: IGuide) => {
-      guide.id = this.guides.length++;
+      guide.id = this.guides.length + 1;
+      guide.resource.id = 1;
       this.guides.push(guide);
     }
 

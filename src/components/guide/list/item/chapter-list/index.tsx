@@ -1,8 +1,10 @@
 import * as React from "react";
 import "./style.scss";
 import { IChapter } from "../../../../chapter/chapter";
+import { Link } from "react-router";
 
 export interface ChapterListProps {
+  guideId: number
   chapters: Array<IChapter>;
 }
 
@@ -24,7 +26,11 @@ export default class ChapterList extends React.Component<ChapterListProps, Chapt
             if (i === 0) {
               return (
                 <div key={i} className="first-chapter">
-                <p className="add-chapter">Add Chapter</p>
+                <Link
+                    className="add-chapter"
+                    to={`/guide/${this.props.guideId}/resource/chapter/add`}
+                  >Add Chapter
+                  </Link>
                   <div className="header">
                     <p className="title">{chapter.title}</p>
                     <p className="chapter-number">Chapter - - - - {chapter.number}</p>

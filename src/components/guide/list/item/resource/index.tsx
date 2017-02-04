@@ -60,7 +60,7 @@ export default class Resource extends React.Component<IResourceProps, IResourceS
   }
 
   private chapters = () => {
-    return this.state.showChapters ? <ChapterList chapters={this.props.resource.chapters}/> : null;
+    return this.state.showChapters ? <ChapterList chapters={this.props.resource.chapters} guideId={this.props.guideId}/> : null;
   }
 
   private addChapter = () => {

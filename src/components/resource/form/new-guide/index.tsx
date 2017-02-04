@@ -1,21 +1,24 @@
 import * as React from "react";
 import "./style.scss";
-import { IResource } from "../resource";
-import resourceStore from "../store";
+import { IResource } from "../../resource";
 
-export interface ResourceFormProps {
-  params: any;
+export interface NewGuideResourceFormProps {
+  resource: IResource;
+  change?: any;
 }
 
-export interface ResourceFormState {
+export interface NewGuideResourceFormState {
   resource: IResource;
 }
 
-export default class ResourceForm extends React.Component<ResourceFormProps, ResourceFormState> {
+export default class NewGuideResourceForm extends React.Component<NewGuideResourceFormProps, NewGuideResourceFormState> {
+  // static propTypes = {}
+  // static defaultProps = {}
+  // state = {}
 
-  constructor (props: ResourceFormProps) {
+  constructor (props: NewGuideResourceFormProps) {
     super(props);
-    this.state = {resource: resourceStore.getResource(this.props.params.id)};
+    this.state = {resource: this.props.resource};
   }
 
   render() {
@@ -48,27 +51,14 @@ export default class ResourceForm extends React.Component<ResourceFormProps, Res
             ></textarea>
           </label>
         </div>
-        <button onClick={this.createResource}>Create Resource</button>
       </div>
     );
   }
 
-  private updateResource = (key: string, e: any) => {
-    let state = this.state;
-    state.resource[key] = e.target.value;
-    this.setState(state);
-  }
-
-  private createResource = () => {
-    if (this.valid()) {
-      resourceStore.createResource(this.state.resource, this.props.params.id);
-    } else {
-      console.log('title is required', this.state.resource);
+    private updateResource = (key: string, e: any) => {
+      let state = this.state;
+      state.resource[key] = e.target.value;
+      this.setState(state);
+      this.props.change(this.state.resource);
     }
-  }
-
-  private valid = (): boolean => {
-    return (this.state.resource.title.length > 0);
-  }
-
 }
