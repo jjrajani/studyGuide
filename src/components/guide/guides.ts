@@ -4,6 +4,7 @@ export interface IGuide {
   description: string;
   resource: {
     title: string;
+    description: string;
   }
 }
 
@@ -13,6 +14,7 @@ export class Guide {
   description: "";
   resource: {
     title: "",
+    description: "",
   }
 }
 
@@ -22,7 +24,8 @@ const GUIDES: Array<IGuide> = [
     title: "First",
     description: "The First Description EVER!",
     resource: {
-      title: "Book One"
+      title: "Book One",
+      description: "the first books desription"
     }
   },
   {
@@ -30,7 +33,8 @@ const GUIDES: Array<IGuide> = [
     title: "Second",
     description: "The Second Description EVER!",
     resource: {
-      title: "Book Two"
+      title: "Book Two",
+      description: "the second books desription"
     }
   },
   {
@@ -38,7 +42,8 @@ const GUIDES: Array<IGuide> = [
     title: "Third",
     description: "The Third Description EVER!",
     resource: {
-      title: ""
+      title: "",
+      description: "the third books desription"
     }
   },
 ];

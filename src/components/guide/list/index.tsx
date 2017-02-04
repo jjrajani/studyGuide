@@ -23,17 +23,51 @@ export default class GuideList extends React.Component<{}, {}> {
   private list = (guides: Array<IGuide>): Array<JSX.Element> => {
     return guides.map( (guide, i) => {
       return (
-        <li key={i}>
-          <p>{guide.title}</p>
-          <p>{guide.description}</p>
-          {guide.resource.title.length === 0
-            ? <Link to={`/guide/${guide.id}/resource/add`}>Add Resource</Link>
-            : <Link to={`/guide/${guide.id}/resource`}>{guide.resource.title}</Link>
-          }
-          <Link to={`/guide/edit/${guide.id}`}>Edit Guide: {guide.id}</Link>
-          <Link to={`/guide/${guide.id}`}>View Guide: {guide.id}</Link>
+        <li className="guide" key={i}>
+          {this.guideTitle(guide)}
+          {this.guideResource(guide)}
+          <Link
+            className="edit-guide"
+            to={`/guide/edit/${guide.id}`}
+          >Edit Guide: {guide.id}
+          </Link>
         </li>
       );
     });
+  }
+
+  private guideTitle = (guide: IGuide) => {
+    return (
+      <div className="title">
+        <span className="label-tab">Guide:</span>
+        <div className="align-bottom">
+          <Link
+            className="link"
+            to={`/guide/${guide.id}`}
+          >{guide.title}
+          </Link>
+        <p className="description">{guide.description}</p>
+        </div>
+      </div>
+    );
+  }
+
+  private guideResource = (guide: IGuide) => {
+    return guide.resource.title.length === 0
+      ? <Link
+          className="add-resource"
+          to={`/guide/${guide.id}/resource/add`}
+        >Add Resource
+        </Link>
+      : <div className="resource">
+          <Link
+            className="link"
+            to={`/guide/${guide.id}/resource`}
+          >{guide.resource.title}
+          </Link>
+          <p className="description">
+            {guide.resource.description}
+          </p>
+        </div>
   }
 }

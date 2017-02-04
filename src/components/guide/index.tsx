@@ -1,16 +1,7 @@
 import * as React from "react";
 import "./style.scss";
 
-import Nav from "../nav";
-import { ILink } from "../nav/link";
 import GuideList from "./list";
-
-let links: Array<ILink> = [
-  {
-    text: "New Guide",
-    link: "/guide/new",
-  }
-];
 
 export default class Guide extends React.Component<{}, {}> {
   // static propTypes = {}
@@ -20,7 +11,9 @@ export default class Guide extends React.Component<{}, {}> {
   render() {
     return (
       <div id="guide">
-        <Nav links={links} />
+        <div className="row">
+          <h3>Guides</h3>
+        </div>
         <GuideList />
       </div>
     );
