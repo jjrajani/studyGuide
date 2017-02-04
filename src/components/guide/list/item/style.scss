@@ -1,0 +1,52 @@
+$blue: #61DAFB;
+
+.guide-list-item {
+  border: solid green 1px;
+  margin: 2rem 0;
+  .title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+    color: $blue;
+    padding: 1rem 0;
+    border-bottom: solid grey 1px;
+    background-color: #222222;
+    .guide-link {
+      padding: 0.5rem 2vw;
+      margin: 0 2vw;
+      border-radius: 20px;
+      border: solid $blue 2px;
+      color: $blue;
+      &:hover {
+        color: orange;
+      }
+    }
+    .text {
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      .toggle-descript {
+        position: absolute;
+        top: 16%;
+        right: -2vw;
+        padding: 0.4vw 0.45vw;
+        margin: 0 0.375vw;
+        color: $blue;
+        &:hover, &.active {
+          color: orange;
+        }
+      }
+    }
+    .description {
+      margin: 0 0 0 0.75vw;
+      padding: 0.5rem 2vw;
+      font-size: 0.9rem;
+      color: $blue;
+    }
+    .edit-guide {
+      color: $blue;
+      margin: 0 2vw 0 auto;
+    }
+  }
+}

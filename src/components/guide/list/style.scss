@@ -5,34 +5,4 @@
     padding: 0;
     list-style: none;
   }
-  .guide {
-    border: solid green 1px;
-    margin: 2rem 0;
-    .title {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      text-decoration: none;
-      color: #61DAFB;
-      padding: 1rem 0;
-      .label-tab {
-        padding: 0.5rem 2vw;
-        margin: 0 2vw;
-        border-radius: 20px;
-      }
-      .link {
-        font-size: 1.3rem;
-        padding: 0.5rem 2vw;
-        border-bottom: solid 2px grey;
-        color: grey;
-        &:hover {
-          color: orange;
-        }
-      }
-      .description {
-        margin: 0;
-        padding: 0.5rem 2vw 0.5rem 0;
-      }
-    }
-  }
 }

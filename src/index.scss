@@ -15,6 +15,10 @@ body {
   font-size: 16px;
 }
 
+p {
+  margin: 0;
+}
+
 a {
   text-decoration: none;
 }
@@ -23,11 +27,6 @@ a {
   width: 100%;
 }
 
-.label-tab {
-  border: solid #61DAFB 2px;
-}
-
-.align-bottom {
-  display: flex;
-  align-items: flex-end;
+.hidden {
+  display: none;
 }
