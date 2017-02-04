@@ -24,7 +24,7 @@ export default class GuideListItem extends React.Component<GuideListItemProps, G
     return (
         <li className="guide-list-item">
           {this.build(guide)}
-          <Resource guide={guide}/>
+          <Resource guideId={guide.id} resource={guide.resource}/>
         </li>
     );
   }

@@ -37,7 +37,7 @@ export default class GuideList extends React.Component<GuideListProps, GuideList
 
   private list = (guides: Array<IGuide>): Array<JSX.Element> => {
     return guides.map( (guide, i) => {
-      return <GuideListItem guide={guide}/>
+      return <GuideListItem key={i} guide={guide}/>
     });
   }
 

@@ -7,6 +7,7 @@ import GuideDetail from "./components/guide/detail";
 import GuideForm from "./components/guide/form";
 import Resource from "./components/resource";
 import ResourceForm from "./components/resource/form";
+import ChapterForm from "./components/chapter/form";
 import Dashboard from "./components/dashboard";
 import NotFound from "./components/not-found";
 
@@ -23,6 +24,8 @@ const Routes = (props: any) => (
       <Route path="/guide/:id" component={GuideDetail} />
       <Route path="guide/:id/resource" component={Resource}/>
       <Route path="guide/:id/resource/add" component={ResourceForm}/>
+
+      <Route path="guide/:id/resource/chapter/add" component={ChapterForm}/>
 
       <Route path="*" component={NotFound} />
     </Route>
