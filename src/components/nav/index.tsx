@@ -1,6 +1,7 @@
 import * as React from "react";
 import "./style.scss";
 import { ILink } from "./link";
+import { Link } from "react-router";
 
 class Nav extends React.Component<{links: Array<ILink>}, {}> {
 
@@ -18,7 +19,7 @@ class Nav extends React.Component<{links: Array<ILink>}, {}> {
     return this.props.links.map( (link: ILink, i: number) => {
       return (
         <li className="link" key={i}>
-          <a href={link.link} target={link.target || ""}>{link.text}</a>
+          <Link to={link.link}>{link.text}</Link>
         </li>
       );
     });

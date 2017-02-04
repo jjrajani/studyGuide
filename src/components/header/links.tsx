@@ -11,7 +11,7 @@ const links: Array<ILink> = [
   },
   {
     text: "New Guide",
-    link: "/guide/new"
+    link: "/guide/new/0"
   },
 ];
 
