@@ -17,5 +17,10 @@
       color: #61DAFB;
       text-decoration: none;
     }
+    &:hover {
+      a {
+        color: orange;
+      }
+    }
   }
 }

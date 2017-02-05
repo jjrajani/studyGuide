@@ -36,7 +36,7 @@ export default class NewGuideResourceForm extends React.Component<NewGuideResour
               value={resource.title}
               placeholder="Resource Title"
               onChange={this.updateResource.bind(this, "title")}
-            ></input>
+            />
           </label>
         </div>
         <div className="text-input">
@@ -48,7 +48,7 @@ export default class NewGuideResourceForm extends React.Component<NewGuideResour
               value={resource.description}
               placeholder="Resource Description"
               onChange={this.updateResource.bind(this, "description")}
-            ></textarea>
+            />
           </label>
         </div>
       </div>

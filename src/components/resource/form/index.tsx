@@ -2,6 +2,7 @@ import * as React from "react";
 import "./style.scss";
 import { IResource } from "../resource";
 import resourceStore from "../store";
+// import NewResourceChapterForm from "../../chapter/form/new-resource";
 
 export interface ResourceFormProps {
   params: any;
@@ -21,34 +22,37 @@ export default class ResourceForm extends React.Component<ResourceFormProps, Res
   render() {
     let resource = this.state.resource;
     return (
-      <div className="resource-form">
-        <p>Resource</p>
-        <div className="text-input">
-          <label htmlFor="title">
-            Title:
-            <input
-              type="text"
-              id="title"
-              name="title"
-              value={resource.title}
-              placeholder="Resource Title"
-              onChange={this.updateResource.bind(this, "title")}
-            ></input>
-          </label>
+      <div id="new-resource">
+        <h3>New Resource</h3>
+        <div className="resource-form">
+          <div className="text-input">
+            <label htmlFor="title">
+              Title:
+              <input
+                className="title"
+                type="text"
+                id="title"
+                name="title"
+                value={resource.title}
+                placeholder="Resource Title"
+                onChange={this.updateResource.bind(this, "title")}
+              />
+            </label>
+          </div>
+          <div className="text-input">
+            <label htmlFor="resource.description">
+              Description:
+              <textarea
+                id="resource.description"
+                name="description"
+                value={resource.description}
+                placeholder="Resource Description"
+                onChange={this.updateResource.bind(this, "description")}
+              />
+            </label>
+          </div>
         </div>
-        <div className="text-input">
-          <label htmlFor="resource.description">
-            Description:
-            <textarea
-              id="resource.description"
-              name="description"
-              value={resource.description}
-              placeholder="Resource Description"
-              onChange={this.updateResource.bind(this, "description")}
-            ></textarea>
-          </label>
-        </div>
-        <button onClick={this.createResource}>Create Resource</button>
+        <button className="create-resource" onClick={this.createResource}>Create Resource</button>
       </div>
     );
   }
@@ -63,7 +67,7 @@ export default class ResourceForm extends React.Component<ResourceFormProps, Res
     if (this.valid()) {
       resourceStore.createResource(this.state.resource, this.props.params.id);
     } else {
-      console.log('title is required', this.state.resource);
+      console.log("title is required", this.state.resource);
     }
   }
 

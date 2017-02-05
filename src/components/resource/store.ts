@@ -7,34 +7,18 @@ class ResourceStore {
     @observable public resource: IResource = new Resource();
 
     public getResource = (guideId: number) => {
-      console.log('getting resource', guideId)
-      // if (+id === 0) {
-      //   this.resource = new Resource();
-      // } else {
-      //   this.resource = this.resources.filter( (resource: Resource) => {
-      //     return +resource.id === +id;
-      //   })[0];
-      // }
-      // return this.resource;
-      return new Resource();
+      console.log("getting resource", guideId);
+      console.log(guideStore.guides);
+      let resource =  guideStore.guides.filter( (guide) => {
+        return +guide.id === +guideId;
+      })[0].resource;
+      console.log("found resource", resource);
+      return resource || new Resource();
     }
 
     public createResource = (resource: IResource, guideId: number) => {
-      console.log('creation resource', resource, guideId)
       resource.id = 1;
       guideStore.guides[guideId - 1].resource = resource;
-    }
-
-    public update = (resource: IResource) => {
-      console.log('updating resource', resource)
-      // this.resources = this.resources.map( (g) => {
-      //   if (g.id === resource.id) {
-      //     Object.keys(g).forEach( (key) => {
-      //       g[key] = resource[key];
-      //     });
-      //   }
-      //   return g;
-      // });
     }
 
 }

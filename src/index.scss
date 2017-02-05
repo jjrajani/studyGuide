@@ -13,14 +13,21 @@ body {
   padding: 0;
   font-family: sans-serif;
   font-size: 16px;
+  font-weight: 300;
 }
 
-p {
+p, h3 {
   margin: 0;
 }
 
 a {
   text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .row {

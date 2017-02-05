@@ -23,13 +23,13 @@ export default class GuideList extends React.Component<GuideListProps, GuideList
   }
 
   render() {
-    console.log(guideStore.guides)
+    console.log(guideStore.guides);
     return (
-      <div id="guide-list">
-        <div className="row">
+      <div id="guide" className="list">
+        <div id="header">
           <h3>Guides</h3>
         </div>
-        <ul className="guide-list">
+        <ul className="guide list">
           {this.list(guideStore.guides)}
         </ul>
       </div>
@@ -38,7 +38,7 @@ export default class GuideList extends React.Component<GuideListProps, GuideList
 
   private list = (guides: Array<IGuide>): Array<JSX.Element> => {
     return guides.map( (guide, i) => {
-      return <GuideListItem key={i} guide={guide}/>
+      return <GuideListItem key={i} guide={guide}/>;
     });
   }
 

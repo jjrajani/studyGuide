@@ -27,14 +27,151 @@ const GUIDES: Array<IGuide> = [
         {
           id: 1,
           number: 1,
+          pageNumber: 12,
           title: "First chapter",
-          description: "the first chapter"
+          description: "the first chapter",
+          sections: [
+            {
+              id: 1,
+              pageNumber: 12,
+              title: "first section",
+              description: "first section descr",
+              notes: [
+                {
+                  id: 1,
+                  pageNumber: 12,
+                  text:"The first note ever!",
+                },
+                {
+                  id: 2,
+                  pageNumber: 12,
+                  text:"The second note ever!",
+                },
+                {
+                  id: 3,
+                  pageNumber: 13,
+                  text:"The third note ever!",
+                },
+              ],
+            },
+            {
+              id: 2,
+              pageNumber: 18,
+              title: "second section",
+              description: "second section descr",
+              notes: [
+                {
+                  id: 1,
+                  pageNumber: 12,
+                  text:"The first note ever!",
+                },
+                {
+                  id: 2,
+                  pageNumber: 12,
+                  text:"The second note ever!",
+                },
+                {
+                  id: 3,
+                  pageNumber: 13,
+                  text:"The third note ever!",
+                },
+              ],
+            },
+            {
+              id: 3,
+              pageNumber: 123,
+              title: "third section",
+              description: "third section descr",
+              notes: [
+                {
+                  id: 1,
+                  pageNumber: 12,
+                  text:"The first note ever!",
+                },
+                {
+                  id: 2,
+                  pageNumber: 12,
+                  text:"The second note ever!",
+                },
+                {
+                  id: 3,
+                  pageNumber: 13,
+                  text:"The third note ever!",
+                },
+              ],
+            },
+            {
+              id: 4,
+              pageNumber: 345,
+              title: "fourth section",
+              description: "fourth section descr",
+              notes: [
+                {
+                  id: 1,
+                  pageNumber: 12,
+                  text:"The first note ever!",
+                },
+                {
+                  id: 2,
+                  pageNumber: 12,
+                  text:"The second note ever!",
+                },
+                {
+                  id: 3,
+                  pageNumber: 13,
+                  text:"The third note ever!",
+                },
+              ],
+            },
+          ],
         },
         {
           id: 2,
           number: 4,
+          pageNumber: 58,
           title: "Fourth chapter",
-          description: "the fourth chapter"
+          description: "the fourth chapter",
+          sections: [],
+        },
+        {
+          id: 3,
+          number: 6,
+          pageNumber: 72,
+          title: "Sixth Chapter",
+          description: "The sixth Chapter",
+          sections: [],
+        },
+        {
+          id: 4,
+          number: 7,
+          pageNumber: 89,
+          title: "Crop List with Toggle Extenstion",
+          description: "Add functionality for displaying first three chapters with a toggle option to show more chapters.",
+          sections: [],
+        },
+        {
+          id: 3,
+          number: 9,
+          pageNumber: 102,
+          title: "Ninth Chapter",
+          description: "The ninth Chapter",
+          sections: [],
+        },
+        {
+          id: 3,
+          number: 10,
+          pageNumber: 121,
+          title: "Tenth Chapter",
+          description: "The tenth Chapter",
+          sections: [],
+        },
+        {
+          id: 5,
+          number: 12,
+          pageNumber: 135,
+          title: "Hows we do",
+          description: "Toggle implementation calibration",
+          sections: [],
         },
       ]
     }
@@ -47,7 +184,7 @@ const GUIDES: Array<IGuide> = [
       id: 1,
       title: "Book Two",
       description: "the second books desription",
-      chapters: []
+      chapters: [],
     }
   },
   {
@@ -57,13 +194,15 @@ const GUIDES: Array<IGuide> = [
     resource: {
       id: 1,
       title: "",
-      description: "the third books desription",
+      description: "",
       chapters: [
         {
-          id: 1,
-          number: 1,
-          title: "First chapter",
-          description: "the first chapter"
+          id: 0,
+          number: 0,
+          pageNumber: 0,
+          title: "",
+          description: "",
+          sections: [],
         },
       ]
     }

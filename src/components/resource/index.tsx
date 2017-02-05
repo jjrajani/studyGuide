@@ -9,9 +9,7 @@ export default class Resource extends React.Component<{}, {}> {
   render() {
     return (
       <div id="resource">
-        <h1>
-          resource
-        </h1>
+        <h1>resource</h1>
       </div>
     );
   }

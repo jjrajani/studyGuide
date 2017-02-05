@@ -53,7 +53,7 @@ export default class GuideForm extends React.Component<GuideFormProps, GuideForm
             value={this.state.guide.description}
             placeholder="Description"
             onChange={this.updateField.bind(this, "description")}
-          ></textarea>
+          />
         </label>
         <NewResourceForm resource={this.state.guide.resource} change={this.updateResource}/>
         { +this.state.guide.id === 0
@@ -81,7 +81,7 @@ export default class GuideForm extends React.Component<GuideFormProps, GuideForm
     if ( this.valid(this.state.guide)) {
       guideStore.create(this.state.guide);
     } else {
-      console.log('invalid form')
+      console.log("invalid form");
     }
   }
 
