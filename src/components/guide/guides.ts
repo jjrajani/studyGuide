@@ -40,7 +40,7 @@ const GUIDES: Array<IGuide> = [
                 {
                   id: 1,
                   pageNumber: 12,
-                  text:"The first note ever!",
+                  text:"The first note ever! The first note ever! The first note ever! The first note ever! The first note ever! The first note ever! The first note ever! The first note ever! The first note ever! The first note ever! The first note ever! The first note ever! The first note ever! The first note ever! The first note ever!",
                 },
                 {
                   id: 2,
@@ -51,6 +51,26 @@ const GUIDES: Array<IGuide> = [
                   id: 3,
                   pageNumber: 13,
                   text:"The third note ever!",
+                },
+                {
+                  id: 4,
+                  pageNumber: 13,
+                  text:"The fourth note ever!",
+                },
+                {
+                  id: 5,
+                  pageNumber: 14,
+                  text:"The fifth note ever!",
+                },
+                {
+                  id: 6,
+                  pageNumber: 15,
+                  text:"The sixth note ever!",
+                },
+                {
+                  id: 7,
+                  pageNumber: 15,
+                  text:"The seventh note ever!",
                 },
               ],
             },

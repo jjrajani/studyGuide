@@ -67,7 +67,7 @@ export default class Chapter extends React.Component<ChapterProps, ChapterState>
       <div className="add">
         <Link
           className="add link"
-          to={`/guide/${this.props.guideId}/resource/chapter/section/add`}
+          to={`/guide/${this.props.guideId}/resource/chapter/${this.props.chapter.id}/section/add`}
         >Add Section
         </Link>
       </div>
@@ -82,7 +82,7 @@ export default class Chapter extends React.Component<ChapterProps, ChapterState>
   }
 
   private setListSize = (listSize: number) => {
-    this.setState({showSections: this.state.showSections, listSize: listSize});
+    this.setState({listSize: listSize});
   }
 
   private openSections = () => {
@@ -119,7 +119,6 @@ export default class Chapter extends React.Component<ChapterProps, ChapterState>
   }
 
   private toggleSections = () => {
-    console.log('sections', this.props.chapter.sections);
     this.setState({showSections: !this.state.showSections});
   }
 

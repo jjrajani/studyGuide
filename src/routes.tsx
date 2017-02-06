@@ -5,9 +5,16 @@ import App from "./components/app";
 import Guide from "./components/guide";
 import GuideDetail from "./components/guide/detail";
 import GuideForm from "./components/guide/form";
+
 import Resource from "./components/resource";
 import ResourceForm from "./components/resource/form";
+
 import ChapterForm from "./components/chapter/form";
+
+import SectionForm from "./components/section/form";
+
+import NoteForm from "./components/note/form";
+
 import Dashboard from "./components/dashboard";
 import NotFound from "./components/not-found";
 
@@ -26,6 +33,13 @@ const Routes = (props: any) => (
       <Route path="guide/:id/resource/add" component={ResourceForm}/>
 
       <Route path="guide/:id/resource/chapter/add" component={ChapterForm}/>
+      <Route path="guide/:id/resource/chapter/:chapterId/edit" component={ChapterForm}/>
+
+      <Route path="guide/:id/resource/chapter/:chapterId/section/add" component={SectionForm}/>
+      <Route path="guide/:id/resource/chapter/:chapterId/section/edit" component={SectionForm}/>
+
+      <Route path="guide/:id/resource/chapter/:chapterId/section/:sectionId/note/add" component={NoteForm}/>
+      <Route path="guide/:id/resource/chapter/:chapterId/section/:sectionId/note/edit" component={NoteForm}/>
 
       <Route path="*" component={NotFound} />
     </Route>

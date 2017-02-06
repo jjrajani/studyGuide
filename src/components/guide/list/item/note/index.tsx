@@ -1,5 +1,5 @@
 import * as React from "react";
-// import "./style.scss";
+import "./style.scss";
 import { INote } from "../../../../note/note";
 import { Link } from "react-router";
 
@@ -26,14 +26,12 @@ export default class Note extends React.Component<NoteProps, NoteState> {
     return (
       <div className="note item">
         <div className="note header">
-          <div className="note sub-header">
-            <Link
-              className="link page-number"
-              to={`/guide/${this.props.guideId}/resource/chapter/${this.props.chapterId}/section${this.props.sectionId}/note/${note.id}`}
-            >pg.{note.pageNumber}
-            </Link>
-            {this.edit()}
-          </div>
+          <Link
+            className="link page-number"
+            to={`/guide/${this.props.guideId}/resource/chapter/${this.props.chapterId}/section${this.props.sectionId}/note/${note.id}`}
+          >pg.{note.pageNumber}
+          </Link>
+          {this.edit()}
         </div>
         <p className="text">
           {note.text}

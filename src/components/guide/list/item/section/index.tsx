@@ -3,6 +3,7 @@ import * as React from "react";
 import { ISection } from "../../../../section/section";
 import { Link } from "react-router";
 import Note from "../note";
+import ListExtender from "../extender";
 
 export interface SectionProps {
   guideId: number;
@@ -12,13 +13,14 @@ export interface SectionProps {
 
 export interface SectionState {
   showNotes: boolean;
+  listSize: number;
 }
 
 export default class Section extends React.Component<SectionProps, SectionState> {
 
   constructor (props: SectionProps) {
     super(props);
-    this.state = {showNotes: false};
+    this.state = {showNotes: false, listSize: 3};
   }
 
   render() {
@@ -51,7 +53,12 @@ export default class Section extends React.Component<SectionProps, SectionState>
       <div className="note list">
         {this.props.section.notes.map( (note, i) => {
           return (<Note key={i} note={note} guideId={this.props.guideId} chapterId={this.props.chapterId} sectionId={this.props.section.id}/>)
-        })}
+        }).slice(0, this.state.listSize)}
+        <ListExtender
+          renderedListSize={this.state.listSize}
+          listLength={this.props.section.notes.length}
+          setListSize={this.setListSize}
+        />
       </div>
     )
   }
@@ -61,7 +68,7 @@ export default class Section extends React.Component<SectionProps, SectionState>
       <div className="add note">
         <Link
           className="add link"
-          to={`/guide/${this.props.guideId}/resource/chapter/${this.props.chapterId}/section/add`}
+          to={`/guide/${this.props.guideId}/resource/chapter/${this.props.chapterId}/section/${this.props.section.id}/note/add`}
         >Add Note
         </Link>
       </div>
@@ -111,6 +118,10 @@ export default class Section extends React.Component<SectionProps, SectionState>
   private toggleNotes = () => {
     console.log('sections', this.props.section.notes);
     this.setState({showNotes: !this.state.showNotes});
+  }
+
+  private setListSize = (listSize: number) => {
+    this.setState({listSize: listSize});
   }
 
 }

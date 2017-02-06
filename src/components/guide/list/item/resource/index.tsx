@@ -121,6 +121,7 @@ export default class Resource extends React.Component<ResourceProps, ResourceSta
   private closeChapters = () => {
     return (
       <div className="toggles">
+        {this.addChapter()}
         <p
           className="chapter toggle"
           onClick={this.toggleDescription}
@@ -135,10 +136,10 @@ export default class Resource extends React.Component<ResourceProps, ResourceSta
   }
 
   private setListSize = (listSize: number) => {
-    this.setState({showChapters: this.state.showChapters, listSize: listSize});
+    this.setState({listSize: listSize});
   }
 
   private toggleDescription = () => {
-    this.setState({showChapters: !this.state.showChapters, listSize: this.state.listSize});
+    this.setState({showChapters: !this.state.showChapters});
   }
 }

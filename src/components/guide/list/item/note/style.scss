@@ -1,0 +1,26 @@
+.note {
+  &.header {
+    position: absolute !important;
+    width: auto !important;
+    right: 1vw;
+  }
+  .item {
+    position: relative !important;
+    &:first-child {
+      margin-top: 3vw !important;
+    }
+    &:last-child {
+      padding-bottom: 3vw !important;
+    }
+    .text {
+      position: relative !important;
+      padding-top: 6vw !important;
+    }
+  }
+  i {
+    font-size: 1rem;
+  }
+  .page-number {
+    font-size: 0.7rem;
+  }
+}

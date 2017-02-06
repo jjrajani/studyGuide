@@ -25,20 +25,12 @@ $medgrey: #555;
   border-top: solid $darkgrey 1px;
   .header {}
   .item {
-    &:last-child{
-      &.note {
-        padding-bottom: 3vw;
-      }
-    }
     .header {
       align-items: center;
       justify-content: space-between;
       padding: 1.5vw;
       width: 100%;
       flex-wrap: wrap;
-      &.note {
-        justify-content: flex-end;
-      }
       .sub-header {
         display: flex;
         align-items: flex-start;
@@ -58,8 +50,19 @@ $medgrey: #555;
           text-align: left;
         }
         a.page-number {
-          margin: 0 1vw 0 0;
+         margin: 0 1vw 0 0;
         }
+      }
+      a.link {
+        color: $medgrey;
+        margin: 1.5vw 1vw 1.5vw auto;
+        padding: 0.5vw 0 0.5vw;
+        font-weight: 600;
+        white-space: nowrap;
+        border: solid 2px transparent;
+      }
+      a.page-number {
+       margin: 0 1vw 0 0;
       }
       div.toggles {
         display: flex;
