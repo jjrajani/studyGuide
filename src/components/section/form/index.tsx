@@ -6,6 +6,7 @@ import sectionStore from "../store";
 
 export interface SectionFormProps {
   params: any;
+  change?: Function;
 }
 
 export interface SectionFormState {
@@ -17,22 +18,22 @@ export default class SectionForm extends React.Component<SectionFormProps, Secti
   constructor (props: SectionFormProps) {
     super(props);
     let params = this.props.params;
-    sectionStore.getSection(params.id, params.chapterId, params.sectionId)
-    this.state = {section: sectionStore.section};
+    this.state = {section: sectionStore.getSection(params.id, params.chapterId, params.sectionId)};
   }
 
   render() {
     let section = this.state.section;
     return (
-      <div className="new section">
-        <h3>New Section</h3>
+      <div id="new-section" className="form-wrapper">
+        <div className="header">
+          <h3>New Section</h3>
+        </div>
         <div className="section form">
-          <div className="text input">
+          <div className="text-input">
             <label htmlFor="title">
               Title:
               <input
                 type="text"
-                id="title"
                 name="title"
                 value={section.title}
                 placeholder="Section Title"
@@ -44,7 +45,6 @@ export default class SectionForm extends React.Component<SectionFormProps, Secti
             <label htmlFor="description">
               Description:
               <textarea
-                id="description"
                 name="description"
                 value={section.description}
                 placeholder="Section Description"
@@ -53,7 +53,7 @@ export default class SectionForm extends React.Component<SectionFormProps, Secti
             </label>
           </div>
         </div>
-        <button className="create section" onClick={this.createSection}>Create Section</button>
+        <button className="create-section submit" onClick={this.createSection}>Create Section</button>
       </div>
     );
   }

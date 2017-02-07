@@ -1,6 +1,9 @@
 $blue: #61DAFB;
 $darkgrey: #222222;
 $lightgrey: #bbb;
+
+$purpleNavy: #4C6085;
+$eerieBlack: #161925;
 //wrapper
 #guide {
   display: flex;
@@ -24,24 +27,24 @@ $lightgrey: #bbb;
   }
   .list {
     margin-left: 1.5vw;
-    border-left: solid 1px $darkgrey;
+    width: 100%;
     &.note {
-      border-top: solid 1px $darkgrey;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
     }
     .extender {
-      border-top: solid 1px $darkgrey;
       display: flex;
       justify-content: center;
       align-items: center;
       p.button {
         border-radius: 20px;
-        border: solid $blue 2px;
-        color: $blue;
+        border: solid orange 2px;
+        color: orange;
         padding: 0.5vw 1vw;
         margin: 1vw 2vw;
         cursor: pointer;
         &:hover, &.active {
-          color: orange;
+          color: darken($purpleNavy, 5%);
         }
       }
     }

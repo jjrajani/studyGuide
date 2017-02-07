@@ -6,6 +6,7 @@ import chapterStore from "../store";
 
 export interface ChapterFormProps {
   params: any;
+  change?: Function;
 }
 
 export interface ChapterFormState {
@@ -22,20 +23,21 @@ export default class ChapterForm extends React.Component<ChapterFormProps, Chapt
   render() {
     let chapter = this.state.chapter;
     return (
-      <div className="new chapter">
-        <h3>New Chapter</h3>
+      <div id="new-chapter" className="form-wrapper">
+        <div className="header">
+          <h3>New Chapter</h3>
+        </div>
         <div className="chapter form">
-          <div className="text input">
+          <div className="text-input">
             <label htmlFor="title">
               Title:
               <input
                 className="title"
                 type="text"
-                id="title"
                 name="title"
                 value={chapter.title}
                 placeholder="Chapter Title"
-                onChange={this.updateResource.bind(this, "title")}
+                onChange={this.updateChapter.bind(this, "title")}
               />
             </label>
           </div>
@@ -43,21 +45,24 @@ export default class ChapterForm extends React.Component<ChapterFormProps, Chapt
             <label htmlFor="description">
               Description:
               <textarea
-                id="description"
                 name="description"
                 value={chapter.description}
                 placeholder="Chapter Description"
-                onChange={this.updateResource.bind(this, "description")}
+                onChange={this.updateChapter.bind(this, "description")}
               />
             </label>
           </div>
         </div>
-        <button className="create chapter" onClick={this.createChapter}>Create Chapter</button>
+        <button className="create-chapter submit" onClick={this.createChapter}>Create Chapter</button>
       </div>
     );
   }
 
-  private updateResource = (key: string, e: any) => {
+  private updateChapter = (key: string, e: any) => {
+    if (this.props.change) {
+      console.log('has change function')
+      this.props.change(this.state.chapter)
+    }
     let state = this.state;
     state.chapter[key] = e.target.value;
     this.setState(state);

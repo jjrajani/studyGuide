@@ -26,7 +26,7 @@ export default class Chapter extends React.Component<ChapterProps, ChapterState>
     let chapter = this.props.chapter;
     return (
       <div className="chapter list-item">
-        <div className="header">
+        <div className="chapter header">
           <div className="chapter sub-header">
             <Link
               className="link"

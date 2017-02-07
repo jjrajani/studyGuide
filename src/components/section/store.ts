@@ -24,7 +24,7 @@ class ChapterStore {
           notes: [],
         }
       }
-      console.log("got section", this.section);
+      return this.section;
     }
 
     public createSection = (section: ISection, guideId: number, chapterId: number) => {

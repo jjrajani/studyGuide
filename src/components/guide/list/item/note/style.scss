@@ -1,20 +1,22 @@
 .note {
   &.header {
     position: absolute !important;
-    width: auto !important;
-    right: 1vw;
+    width: 93% !important;
+    height: 8vw;
+    right: 3vw;
   }
-  .item {
+  .list-item {
     position: relative !important;
-    &:first-child {
-      margin-top: 3vw !important;
-    }
+    padding: 2vw 3vw 0;
+    border: none;
+    &:first-child{padding-top: 4vw;}
+    &:nth-last-child(1n){padding-bottom: 4vw;}
     &:last-child {
-      padding-bottom: 3vw !important;
+      padding: 3vw !important;
     }
     .text {
       position: relative !important;
-      padding-top: 6vw !important;
+      padding-top: 10vw !important;
     }
   }
   i {

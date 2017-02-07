@@ -2,10 +2,11 @@ import * as React from "react";
 import "./style.scss";
 import { IResource } from "../resource";
 import resourceStore from "../store";
-// import NewResourceChapterForm from "../../chapter/form/new-resource";
+// import ChapterForm from "../../chapter/form/";
 
 export interface ResourceFormProps {
   params: any;
+  change?: Function;
 }
 
 export interface ResourceFormState {
@@ -22,16 +23,21 @@ export default class ResourceForm extends React.Component<ResourceFormProps, Res
   render() {
     let resource = this.state.resource;
     return (
-      <div id="new-resource">
-        <h3>New Resource</h3>
-        <div className="resource-form">
+      <div id="new-resource" className="form-wrapper">
+        {this.props.change
+          ? (<div className="sub-header">
+               <h3>Resource</h3>
+             </div>)
+          : (<div className="header">
+               <h3>New Resource</h3>
+             </div>)
+        }
+        <div className="resource form">
           <div className="text-input">
             <label htmlFor="title">
-              Title:
+              {this.props.change ? "Resource" : ""} Title:
               <input
-                className="title"
                 type="text"
-                id="title"
                 name="title"
                 value={resource.title}
                 placeholder="Resource Title"
@@ -40,10 +46,9 @@ export default class ResourceForm extends React.Component<ResourceFormProps, Res
             </label>
           </div>
           <div className="text-input">
-            <label htmlFor="resource.description">
-              Description:
+            <label htmlFor="description">
+              {this.props.change ? "Resource" : ""} Description:
               <textarea
-                id="resource.description"
                 name="description"
                 value={resource.description}
                 placeholder="Resource Description"
@@ -52,12 +57,16 @@ export default class ResourceForm extends React.Component<ResourceFormProps, Res
             </label>
           </div>
         </div>
-        <button className="create-resource" onClick={this.createResource}>Create Resource</button>
+        {this.props.change ? null : <button className="create-resource submit" onClick={this.createResource}>Create Resource</button>}
       </div>
     );
   }
 
   private updateResource = (key: string, e: any) => {
+    if (this.props.change) {
+      console.log('has change function')
+      this.props.change(this.state.resource)
+    }
     let state = this.state;
     state.resource[key] = e.target.value;
     this.setState(state);
@@ -65,9 +74,9 @@ export default class ResourceForm extends React.Component<ResourceFormProps, Res
 
   private createResource = () => {
     if (this.valid()) {
-      resourceStore.createResource(this.state.resource, this.props.params.id);
+      resourceStore.createResource(this.state.resource, this.props.params.id)
     } else {
-      console.log("title is required", this.state.resource);
+        console.log("title is required", this.state.resource);
     }
   }
 

@@ -9,6 +9,7 @@ class ResourceStore {
     public getResource = (guideId: number) => {
       console.log("getting resource", guideId);
       console.log(guideStore.guides);
+      if (guideId === 0) { return new Resource(); }
       let resource =  guideStore.guides.filter( (guide) => {
         return +guide.id === +guideId;
       })[0].resource;

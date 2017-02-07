@@ -24,7 +24,7 @@ export default class Note extends React.Component<NoteProps, NoteState> {
   render() {
     let note = this.props.note;
     return (
-      <div className="note item">
+      <div className="note list-item">
         <div className="note header">
           <Link
             className="link page-number"
