@@ -28,7 +28,7 @@ export default class Note extends React.Component<NoteProps, NoteState> {
         <div className="note header">
           <Link
             className="link page-number"
-            to={`studyGuide/guide/${this.props.guideId}/resource/chapter/${this.props.chapterId}/section${this.props.sectionId}/note/${note.id}`}
+            to={`guide/${this.props.guideId}/resource/chapter/${this.props.chapterId}/section${this.props.sectionId}/note/${note.id}`}
           >pg.{note.pageNumber}
           </Link>
           {this.edit()}
@@ -44,7 +44,7 @@ export default class Note extends React.Component<NoteProps, NoteState> {
     return (
       <Link
         className="link edit"
-        to={`studyGuide/guide/${this.props.guideId}/resource/section/${this.props.sectionId}/note/${this.props.note.id}/edit`}
+        to={`guide/${this.props.guideId}/resource/section/${this.props.sectionId}/note/${this.props.note.id}/edit`}
       ><i className="fa fa-pencil-square-o" aria-hidden="true"/>
       </Link>
     );

@@ -21,7 +21,7 @@ import NotFound from "./components/not-found";
 
 const Routes = (props: any) => (
   <Router {...props} history={hashHistory}>
-    <Route path="/studyGuide" component={App}>
+    <Route path="/" component={App}>
       <IndexRedirect to="guides"/>
       <Route path="dashboard" component={Dashboard} />
 

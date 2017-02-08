@@ -30,7 +30,7 @@ export default class Chapter extends React.Component<ChapterProps, ChapterState>
           <div className="chapter sub-header">
             <Link
               className="link"
-              to={`studyGuide/guide/${this.props.guideId}/resource/chapter/:id`}
+              to={`guide/${this.props.guideId}/resource/chapter/:id`}
             >{chapter.title}:
             </Link>
             <p className="description">
@@ -68,7 +68,7 @@ export default class Chapter extends React.Component<ChapterProps, ChapterState>
       <div className="add">
         <Link
           className="add link"
-          to={`studyGuide/guide/${this.props.guideId}/resource/chapter/${this.props.chapter.id}/section/add`}
+          to={`guide/${this.props.guideId}/resource/chapter/${this.props.chapter.id}/section/add`}
         ><i className="fa fa-plus-circle" aria-hidden="true"></i>
         </Link>
       </div>

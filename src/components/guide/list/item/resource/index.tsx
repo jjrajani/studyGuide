@@ -36,7 +36,7 @@ export default class Resource extends React.Component<ResourceProps, ResourceSta
       <div className="add resource">
         <Link
           className="add link"
-          to={`studyGuide/guide/${this.props.guideId}/resource/add`}
+          to={`guide/${this.props.guideId}/resource/add`}
         ><i className="fa fa-plus-circle" aria-hidden="true"></i>
         </Link>
       </div>
@@ -53,7 +53,7 @@ export default class Resource extends React.Component<ResourceProps, ResourceSta
           </p>
           <Link
             className="link"
-            to={`studyGuide/guide/${this.props.guideId}/resource`}
+            to={`guide/${this.props.guideId}/resource`}
           >{resource.title}:
           </Link>
           <p className="description">
@@ -100,7 +100,7 @@ export default class Resource extends React.Component<ResourceProps, ResourceSta
       <div className="add chapter">
         <Link
           className="add link"
-          to={`studyGuide/guide/${this.props.guideId}/resource/chapter/add`}
+          to={`guide/${this.props.guideId}/resource/chapter/add`}
         ><i className="fa fa-plus-circle" aria-hidden="true"></i>
         </Link>
       </div>
