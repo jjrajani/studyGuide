@@ -19,7 +19,7 @@ class Nav extends React.Component<{links: Array<ILink>}, {}> {
     return this.props.links.map( (link: ILink, i: number) => {
       return (
         <li className="link" key={i}>
-          <Link to={link.link}>{link.text}</Link>
+          <Link activeClassName="active" to={link.link}>{link.text}</Link>
         </li>
       );
     });

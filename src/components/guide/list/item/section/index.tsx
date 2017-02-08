@@ -69,7 +69,7 @@ export default class Section extends React.Component<SectionProps, SectionState>
         <Link
           className="add link"
           to={`/guide/${this.props.guideId}/resource/chapter/${this.props.chapterId}/section/${this.props.section.id}/note/add`}
-        >Add Note
+        ><i className="fa fa-plus-circle" aria-hidden="true"></i>
         </Link>
       </div>
     );

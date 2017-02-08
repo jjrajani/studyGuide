@@ -37,7 +37,7 @@ export default class Resource extends React.Component<ResourceProps, ResourceSta
         <Link
           className="add link"
           to={`/guide/${this.props.guideId}/resource/add`}
-        >Add Resource
+        ><i className="fa fa-plus-circle" aria-hidden="true"></i>
         </Link>
       </div>
     );
@@ -48,6 +48,9 @@ export default class Resource extends React.Component<ResourceProps, ResourceSta
     return (
       <div className="resource header">
         <div className="resource sub-header">
+          <p className="label">
+            Resource:
+          </p>
           <Link
             className="link"
             to={`/guide/${this.props.guideId}/resource`}
@@ -57,12 +60,18 @@ export default class Resource extends React.Component<ResourceProps, ResourceSta
             {resource.description}
           </p>
         </div>
-        { resource.chapters.length === 0
-          ? this.addChapter()
-          : this.chapterToggle()
-        }
+        {this.nav()}
       </div>
     );
+  }
+
+  private nav = () => {
+    return (
+      <div className="chapter toggles">
+        {this.addChapter()}
+        {this.chapterToggle()}
+      </div>
+    )
   }
 
   private chapters = (listSize: number) => {
@@ -91,55 +100,56 @@ export default class Resource extends React.Component<ResourceProps, ResourceSta
       <div className="add chapter">
         <Link
           className="add link"
-          to={`/guide/${this.props.guideId}/resource/chapter/add`}
-        >Add Chapter
+          to={`guide/${this.props.guideId}/resource/chapter/add`}
+        ><i className="fa fa-plus-circle" aria-hidden="true"></i>
         </Link>
       </div>
     );
   }
 
+  private toggleChapters = () => {
+    this.setState({showChapters: !this.state.showChapters});
+    // return this.props.resource.chapters.length > 0 && this.state.showChapters
+    // ? this.chapterToggle()
+    // : null;
+  }
+
   private chapterToggle = () => {
-    return this.state.showChapters ? this.closeChapters() : this.openChapters();
+    return this.props.resource.chapters.length > 0
+    ? (<p
+        className="chapter toggle"
+        onClick={this.toggleChapters}
+      >{this.props.resource.chapters.length} Chapters
+        <i
+          className="fa fa-arrow-circle-down"
+          aria-hidden="true"
+        />
+      </p>)
+    : null;
   }
 
-  private openChapters = () => {
-    return (
-      <div className="chapter toggles">
-        <p
-          className="chapter toggle"
-          onClick={this.toggleDescription}
-        >Preview Chapters
-          <i
-            className="fa fa-arrow-circle-down"
-            aria-hidden="true"
-          />
-        </p>
-      </div>
-    );
-  }
-
-  private closeChapters = () => {
-    return (
-      <div className="toggles">
-        {this.addChapter()}
-        <p
-          className="chapter toggle"
-          onClick={this.toggleDescription}
-        >Hide Chapters
-          <i
-            className="fa fa-arrow-circle-up"
-            aria-hidden="true"
-          />
-        </p>
-      </div>
-    );
-  }
+  // private closeChapters = () => {
+  //   return (
+  //     <div className="toggles">
+  //       {this.addChapter()}
+  //       <p
+  //         className="chapter toggle"
+  //         onClick={this.toggleChapters}
+  //       >Hide Chapters
+  //         <i
+  //           className="fa fa-arrow-circle-up"
+  //           aria-hidden="true"
+  //         />
+  //       </p>
+  //     </div>
+  //   );
+  // }
 
   private setListSize = (listSize: number) => {
     this.setState({listSize: listSize});
   }
 
-  private toggleDescription = () => {
-    this.setState({showChapters: !this.state.showChapters});
-  }
+  // private toggleDescription = () => {
+  //
+  // }
 }

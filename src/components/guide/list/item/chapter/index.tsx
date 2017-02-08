@@ -63,12 +63,13 @@ export default class Chapter extends React.Component<ChapterProps, ChapterState>
   }
 
   private addSection = () => {
+    console.log('chapter id to add section', this.props.chapter.id)
     return (
       <div className="add">
         <Link
           className="add link"
           to={`/guide/${this.props.guideId}/resource/chapter/${this.props.chapter.id}/section/add`}
-        >Add Section
+        ><i className="fa fa-plus-circle" aria-hidden="true"></i>
         </Link>
       </div>
     );

@@ -1,13 +1,7 @@
 .note {
-  &.header {
-    position: absolute !important;
-    width: 93% !important;
-    height: 8vw;
-    right: 3vw;
-  }
   .list-item {
     position: relative !important;
-    padding: 2vw 3vw 0;
+    padding: 2vw 3vw 2vw 0;
     border: none;
     &:first-child{padding-top: 4vw;}
     &:nth-last-child(1n){padding-bottom: 4vw;}

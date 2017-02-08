@@ -125,7 +125,7 @@ module.exports = {
       {
         test: /\.scss$/,
         include: paths.appSrc,
-        loaders: ["style", "css", "sass"]
+        loaders: ['style', 'css?sourceMap', 'postcss' ,'sass?sourceMap']
       },
       {
         test: /\.(ts|tsx)$/,

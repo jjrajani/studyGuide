@@ -7,7 +7,7 @@ const links: Array<ILink> = [
   },
   {
     text: "Guides",
-    link: "/guide"
+    link: "/guides"
   },
   {
     text: "New Guide",
