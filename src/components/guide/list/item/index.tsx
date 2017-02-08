@@ -16,7 +16,7 @@ export default class GuideListItem extends React.Component<GuideListItemProps, G
 
   constructor (props: GuideListItemProps) {
     super(props);
-    this.state = { showDescription: false };
+    this.state = { showDescription: true };
   }
 
   render() {
