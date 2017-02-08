@@ -100,7 +100,7 @@ export default class Resource extends React.Component<ResourceProps, ResourceSta
       <div className="add chapter">
         <Link
           className="add link"
-          to={`guide/${this.props.guideId}/resource/chapter/add`}
+          to={`studyGuide/guide/${this.props.guideId}/resource/chapter/add`}
         ><i className="fa fa-plus-circle" aria-hidden="true"></i>
         </Link>
       </div>

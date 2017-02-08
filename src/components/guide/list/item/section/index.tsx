@@ -31,7 +31,7 @@ export default class Section extends React.Component<SectionProps, SectionState>
           <div className="sub-header">
             <Link
               className="link"
-              to={`/guide/${this.props.guideId}/resource/chapter/${this.props.chapterId}/section/${section.id}`}
+              to={`studyGuide/guide/${this.props.guideId}/resource/chapter/${this.props.chapterId}/section/${section.id}`}
             >{section.title}:
             </Link>
             <p className="description">
@@ -68,7 +68,7 @@ export default class Section extends React.Component<SectionProps, SectionState>
       <div className="add note">
         <Link
           className="add link"
-          to={`/guide/${this.props.guideId}/resource/chapter/${this.props.chapterId}/section/${this.props.section.id}/note/add`}
+          to={`studyGuide/guide/${this.props.guideId}/resource/chapter/${this.props.chapterId}/section/${this.props.section.id}/note/add`}
         ><i className="fa fa-plus-circle" aria-hidden="true"></i>
         </Link>
       </div>

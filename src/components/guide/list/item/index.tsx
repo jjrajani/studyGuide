@@ -43,7 +43,7 @@ export default class GuideListItem extends React.Component<GuideListItemProps, G
       <div className="link">
         <Link
           className="guide link"
-          to={`/guide/${this.props.guide.id}`}
+          to={`studyGuide/guide/${this.props.guide.id}`}
         >{guide.title}
         </Link>
         {this.state.showDescription ? this.hideDesciption() : this.showDescription()}
@@ -87,7 +87,7 @@ export default class GuideListItem extends React.Component<GuideListItemProps, G
     return (
       <Link
         className="link edit"
-        to={`/guide/edit/${id}`}
+        to={`studyGuide/guide/edit/${id}`}
       ><i className="fa fa-pencil-square-o" aria-hidden="true"/>
       </Link>
     );

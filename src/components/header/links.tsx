@@ -3,15 +3,15 @@ import { ILink } from "../nav/link";
 const links: Array<ILink> = [
   {
     text: "Dashboard",
-    link: "/dashboard"
+    link: "studyGuide/dashboard"
   },
   {
     text: "Guides",
-    link: "/guides"
+    link: "studyGuide/guides"
   },
   {
     text: "New Guide",
-    link: "/guide/new/0"
+    link: "studyGuide/guide/new/0"
   },
 ];
 
