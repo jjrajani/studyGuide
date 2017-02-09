@@ -44,19 +44,23 @@ export default class Chapter extends React.Component<ChapterProps, ChapterState>
   }
 
   private chapterToggle = () => {
-    return (
-      this.state.chapterOpen
-        ? <i
-          onClick={this.toggleChapter}
-          className="fa fa-arrow-circle-left"
-          aria-hidden="true"
-        />
-        : <i
-          onClick={this.toggleChapter}
-          className="fa fa-arrow-circle-right"
-          aria-hidden="true"
-        />
-    );
+    if (this.props.chapter.sections.length > 0) {
+      return (
+        this.state.chapterOpen
+          ? <i
+            onClick={this.toggleChapter}
+            className="fa fa-arrow-circle-left"
+            aria-hidden="true"
+          />
+          : <i
+            onClick={this.toggleChapter}
+            className="fa fa-arrow-circle-right"
+            aria-hidden="true"
+          />
+      );
+    } else {
+      return null
+    }
   }
 
   private chapterDescription = () => {
@@ -64,7 +68,7 @@ export default class Chapter extends React.Component<ChapterProps, ChapterState>
     ? "open description"
     : "closed description";
     return (
-      <p className={className} onClick={this.toggleChapter}>
+      <p className={className}>
         {this.props.chapter.description}
       </p>
     );
