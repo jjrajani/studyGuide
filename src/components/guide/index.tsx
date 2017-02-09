@@ -1,7 +1,7 @@
 import * as React from "react";
 import "./style.scss";
 
-import GuideList from "./list";
+// import GuideList from "./list";
 
 export default class Guide extends React.Component<{}, {}> {
   // static propTypes = {}
@@ -11,7 +11,7 @@ export default class Guide extends React.Component<{}, {}> {
   render() {
     return (
       <div id="guide">
-        <GuideList />
+        guide
       </div>
     );
   }

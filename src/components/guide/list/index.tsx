@@ -13,9 +13,6 @@ export interface GuideListState {
 }
 
 export default class GuideList extends React.Component<GuideListProps, GuideListState> {
-  // static propTypes = {}
-  // static defaultProps = {}
-  // state = {}
 
   constructor (props: GuideListProps) {
     super(props);
@@ -23,7 +20,6 @@ export default class GuideList extends React.Component<GuideListProps, GuideList
   }
 
   render() {
-    console.log(guideStore.guides);
     return (
       <div id="guide" className="list">
         <div id="header">

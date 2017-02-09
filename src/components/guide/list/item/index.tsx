@@ -28,11 +28,12 @@ export default class GuideListItem extends React.Component<GuideListItemProps, G
         </li>
     );
   }
+
   private build = (guide: IGuide) => {
     return (
       <div className="guide header">
         {this.guideSpecs(guide)}
-        {this.descriptionToggle(guide.description)}
+        {this.description(guide.description)}
         {this.editGuide(guide.id)}
       </div>
     );
@@ -46,25 +47,17 @@ export default class GuideListItem extends React.Component<GuideListItemProps, G
           to={`guide/${this.props.guide.id}`}
         >{guide.title}
         </Link>
-        {this.state.showDescription ? this.hideDesciption() : this.showDescription()}
+        {this.showDescription()}
       </div>
     );
   }
 
   private showDescription = () => {
+    let arrowDirection = this.state.showDescription ? "right active" : "left";
     return (
       <i
         onClick={this.toggleDescription}
-        className="fa fa-arrow-circle-right toggle"
-        aria-hidden="true"
-      />
-    );
-  }
-  private hideDesciption = () => {
-    return (
-      <i
-        onClick={this.toggleDescription}
-        className="fa fa-arrow-circle-left toggle active"
+        className={"fa fa-arrow-circle-" + arrowDirection + " toggle"}
         aria-hidden="true"
       />
     );
@@ -74,13 +67,9 @@ export default class GuideListItem extends React.Component<GuideListItemProps, G
     this.setState({showDescription: !this.state.showDescription});
   }
 
-  private descriptionToggle = (description: string) => {
-    return (
-      <p
-        className={this.state.showDescription ? "description" : "hidden"}
-      >{description}
-      </p>
-    );
+  private description = (description: string) => {
+    let className = this.state.showDescription ? "description" : "hidden";
+    return <p className={className}>{description}</p>;
   }
 
   private editGuide = (id: number) => {

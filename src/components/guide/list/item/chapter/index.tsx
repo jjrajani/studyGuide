@@ -23,16 +23,12 @@ export default class Chapter extends React.Component<ChapterProps, ChapterState>
   }
 
   render() {
-    let chapter = this.props.chapter;
+    let className = this.state.chapterOpen ? "open chapter header" : " closed chapter header";
     return (
       <div className="chapter list-item">
-        <div className={this.state.chapterOpen ? "open chapter header" : " closed chapter header"}>
+        <div className={className}>
           <div className="chapter sub-header">
-            <Link
-              className="link"
-              to={`guide/${this.props.guideId}/resource/chapter/:id`}
-            >{chapter.title}:
-            </Link>
+            {this.chapterLink()}
             {this.chapterDescription()}
             {this.chapterToggle()}
           </div>
@@ -43,24 +39,14 @@ export default class Chapter extends React.Component<ChapterProps, ChapterState>
     );
   }
 
-  private chapterToggle = () => {
-    if (this.props.chapter.sections.length > 0) {
-      return (
-        this.state.chapterOpen
-          ? <i
-            onClick={this.toggleChapter}
-            className="fa fa-arrow-circle-left"
-            aria-hidden="true"
-          />
-          : <i
-            onClick={this.toggleChapter}
-            className="fa fa-arrow-circle-right"
-            aria-hidden="true"
-          />
-      );
-    } else {
-      return null
-    }
+  private chapterLink = () => {
+    return (
+      <Link
+        className="link"
+        to={`guide/${this.props.guideId}/resource/chapter/:id`}
+      >{this.props.chapter.title}:
+      </Link>
+    );
   }
 
   private chapterDescription = () => {
@@ -74,25 +60,21 @@ export default class Chapter extends React.Component<ChapterProps, ChapterState>
     );
   }
 
-  private toggleChapter = () => { this.setState({chapterOpen: !this.state.chapterOpen}) }
-
-  private sections = () => {
-    let className = this.state.chapterOpen
-    ? "open section list"
-    : "closed section list";
-    return (
-      <div className={className}>
-        {this.props.chapter.sections.map( (section, i) => {
-          return (<Section key={i} section={section} guideId={this.props.guideId} chapterId={this.props.chapter.id}/>)
-        }).slice(0, this.state.listSize)}
-        <ListExtender
-          renderedListSize={this.state.listSize}
-          listLength={this.props.chapter.sections.length}
-          setListSize={this.setListSize}
+  private chapterToggle = () => {
+    let arrowDirection = this.state.chapterOpen ? "left": "right";
+    if (this.props.chapter.sections.length > 0) {
+      return (
+        <i
+          onClick={this.toggleChapter}
+          className={"fa fa-arrow-circle-" + arrowDirection}
+          aria-hidden="true"
         />
-      </div>
-    )
+      );
+    } else {
+      return null
+    }
   }
+  private toggleChapter = () => { this.setState({chapterOpen: !this.state.chapterOpen}) }
 
   private addSection = () => {
     console.log('chapter id to add section', this.props.chapter.id)
@@ -107,8 +89,29 @@ export default class Chapter extends React.Component<ChapterProps, ChapterState>
     );
   }
 
-  private setListSize = (listSize: number) => {
-    this.setState({listSize: listSize});
+  private sections = () => {
+    let className = this.state.chapterOpen
+    ? "open section list"
+    : "closed section list";
+    return (
+      <div className={className}>
+        {this.props.chapter.sections.map( (section, i) => {
+          return (<Section key={i} section={section} guideId={this.props.guideId} chapterId={this.props.chapter.id}/>)
+        }).slice(0, this.state.listSize)}
+        {this.listExtender()}
+      </div>
+    );
   }
+
+  private listExtender = () => {
+    return (
+      <ListExtender
+        renderedListSize={this.state.listSize}
+        listLength={this.props.chapter.sections.length}
+        setListSize={this.setListSize}
+      />
+    );
+  }
+  private setListSize = (listSize: number) => { this.setState({listSize: listSize}); }
 
 }
