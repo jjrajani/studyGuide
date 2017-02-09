@@ -1,22 +1,22 @@
-.note {
-  .list-item {
-    position: relative !important;
-    padding: 2vw 3vw 2vw 0;
-    border: none;
-    &:first-child{padding-top: 4vw;}
-    &:nth-last-child(1n){padding-bottom: 4vw;}
-    &:last-child {
-      padding: 3vw !important;
-    }
-    .text {
-      position: relative !important;
-      padding-top: 10vw !important;
-    }
-  }
-  i {
-    font-size: 1rem;
-  }
-  .page-number {
-    font-size: 0.7rem;
-  }
-}
+// .note {
+//   .list-item {
+//     position: relative !important;
+//     padding: 2vw 3vw 2vw 0;
+//     border: none;
+//     &:first-child{padding-top: 4vw;}
+//     &:nth-last-child(1n){padding-bottom: 4vw;}
+//     &:last-child {
+//       padding: 3vw !important;
+//     }
+//     .text {
+//       position: relative !important;
+//       padding-top: 10vw !important;
+//     }
+//   }
+//   i {
+//     font-size: 1rem;
+//   }
+//   .page-number {
+//     font-size: 0.7rem;
+//   }
+// }
