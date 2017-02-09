@@ -25,18 +25,28 @@ export default class Note extends React.Component<NoteProps, NoteState> {
     let note = this.props.note;
     return (
       <div className="note list-item">
-        <div className="open note header">
-          <Link
-            className="link page-number"
-            to={`guide/${this.props.guideId}/resource/chapter/${this.props.chapterId}/section${this.props.sectionId}/note/${note.id}`}
-          >pg.{note.pageNumber}
-          </Link>
-          {this.edit()}
-        </div>
-        <p className="text">
-          {note.text}
-        </p>
+        {this.header()}
+        <p className="text">{note.text}</p>
       </div>
+    );
+  }
+
+  private header = () => {
+    return (
+      <div className="open note header">
+        {this.editLink()}
+        {this.edit()}
+      </div>
+    );
+  }
+
+  private editLink = () => {
+    return (
+      <Link
+        className="link page-number"
+        to={`guide/${this.props.guideId}/resource/chapter/${this.props.chapterId}/section${this.props.sectionId}/note/${this.props.note.id}`}
+      >pg.{this.props.note.pageNumber}
+      </Link>
     );
   }
 

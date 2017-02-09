@@ -113,5 +113,4 @@ export default class Chapter extends React.Component<ChapterProps, ChapterState>
     );
   }
   private setListSize = (listSize: number) => { this.setState({listSize: listSize}); }
-
 }
