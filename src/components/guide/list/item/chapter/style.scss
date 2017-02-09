@@ -14,7 +14,7 @@ $lightgrey: #eee;
 .open.header {
   transition-timing-function: ease-out;
   transition: 1s;
-  transform: translateX(0%);
+  // transform: translateX(0%);
   // width: auto;
 }
 
@@ -26,14 +26,14 @@ $lightgrey: #eee;
   transition-timing-function: ease-in;
   transition-duration: 0.5s;
   max-height: 0vh;
-  transform: translateX(-100vw);
+  // transform: translateX(-100vw);
 }
 
 .open.list {
   overflow: scroll;
   transition-timing-function: ease-out;
   transition-duration: 1s;
-  max-height: 35vw;
+  max-height: 30vh;
   transform: translateX(0vw);
   border: none;
 }
