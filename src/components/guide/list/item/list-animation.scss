@@ -1,0 +1,17 @@
+.closed.list {
+  transition-timing-function: ease-in;
+  transition-duration: 1s;
+  max-height: 0vh;
+}
+
+.open.list {
+  overflow: scroll;
+  transition-timing-function: ease-out;
+  transition-duration: 1s;
+  max-height: 30vh;
+  &.chapter {
+    max-height: 45vh;
+  }
+  transform: translateX(0vw);
+  border: none;
+}

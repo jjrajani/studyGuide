@@ -25,8 +25,8 @@ export default class Resource extends React.Component<ResourceProps, ResourceSta
   render() {
     return (
       <div className="resource item">
-      {this.props.resource.title.length === 0 ? this.addResource() : this.renderResource()}
-      {this.chapters(this.state.listSize)}
+        {this.props.resource.title.length === 0 ? this.addResource() : this.renderResource()}
+        {this.chapters(this.state.listSize)}
       </div>
     );
   }
@@ -75,24 +75,23 @@ export default class Resource extends React.Component<ResourceProps, ResourceSta
   }
 
   private chapters = (listSize: number) => {
-    if (this.state.showChapters) {
-      return  (
-        <div className="chapter list">
-          {this.props.resource.chapters.map( (chapter, i) => {
-            return (<Chapter key={i} chapter={chapter} guideId={this.props.guideId}/>)
-          }).slice(0,(listSize))}
-          <div className="show-more">
-          <ListExtender
-            renderedListSize={this.state.listSize}
-            listLength={this.props.resource.chapters.length}
-            setListSize={this.setListSize}
-          />
-          </div>
+    let className = this.state.showChapters
+    ? "open chapter list"
+    : "closed chapter list";
+    return  (
+      <div className={className}>
+        {this.props.resource.chapters.map( (chapter, i) => {
+          return (<Chapter key={i} chapter={chapter} guideId={this.props.guideId}/>)
+        }).slice(0,(listSize))}
+        <div className="show-more">
+        <ListExtender
+          renderedListSize={this.state.listSize}
+          listLength={this.props.resource.chapters.length}
+          setListSize={this.setListSize}
+        />
         </div>
-      )
-    } else {
-      return null;
-    }
+      </div>
+    );
   }
 
   private addChapter = () => {

@@ -64,7 +64,7 @@ export default class Chapter extends React.Component<ChapterProps, ChapterState>
     ? "open description"
     : "closed description";
     return (
-      <p className={className}>
+      <p className={className} onClick={this.toggleChapter}>
         {this.props.chapter.description}
       </p>
     );
