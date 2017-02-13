@@ -18,15 +18,13 @@ class Form extends React.Component<FormProps, {}> {
     return (
       <div className="form">
         {this.form()}
-        <button onClick={this.props.submit.bind(this, this.state)}>Login</button>
+        <button
+          className="submit"
+          onClick={this.props.submit.bind(this, this.state)}
+        >Login
+        </button>
       </div>
     );
-  }
-
-  private form = () => {
-    return this.props.inputs.map((input, i) => {
-      return <Input key={i} config={input} change={this.change}/>
-    });
   }
 
   private buildState = (inputs: Array<any>) => {
@@ -35,9 +33,13 @@ class Form extends React.Component<FormProps, {}> {
     return state;
   }
 
-  private change = (key: string, value: string) => {
-    this.state[key] = value;
+  private form = () => {
+    return this.props.inputs.map((input, i) => {
+      return <Input key={i} config={input} change={this.change}/>
+    });
   }
+
+  private change = (key: string, value: string) => { this.state[key] = value; }
 
 }
 

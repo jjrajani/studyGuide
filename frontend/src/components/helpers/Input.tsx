@@ -17,13 +17,19 @@ class Input extends React.Component<InputProps, {}> {
   }
 
   render() {
+    let config = this.props.config;
     return (
-      <input
-        type={this.props.config.type}
-        name={this.props.config.for}
-        value={this.props.config.value}
-        onChange={this.onChange.bind(this)}
-      />
+      <div className="text-input">
+        <label htmlFor={config.for}>{config.for}
+          <input
+            id={config.for}
+            type={config.type}
+            name={config.for}
+            value={config.value}
+            onChange={this.onChange.bind(this)}
+          />
+        </label>
+      </div>
     );
   }
 

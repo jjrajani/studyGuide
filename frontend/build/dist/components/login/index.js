@@ -20,7 +20,7 @@ var Login = (function (_super) {
         return _this;
     }
     Login.prototype.render = function () {
-        return (React.createElement("div", { className: "nav" },
+        return (React.createElement("div", { id: "login", className: "form-wrapper" },
             React.createElement(helpers_1.Form, { inputs: this.inputs, submit: this.login })));
     };
     return Login;

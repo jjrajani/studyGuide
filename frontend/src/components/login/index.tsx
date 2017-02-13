@@ -25,7 +25,7 @@ class Login extends React.Component<{}, LoginState> {
 
   render() {
     return (
-      <div className="nav">
+      <div id="login" className="form-wrapper">
         <Form inputs={this.inputs} submit={this.login} />
       </div>
     );

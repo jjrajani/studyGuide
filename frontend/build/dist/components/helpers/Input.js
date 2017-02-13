@@ -15,7 +15,11 @@ var Input = (function (_super) {
         return _this;
     }
     Input.prototype.render = function () {
-        return (React.createElement("input", { type: this.props.config.type, name: this.props.config.for, value: this.props.config.value, onChange: this.onChange.bind(this) }));
+        var config = this.props.config;
+        return (React.createElement("div", { className: "text-input" },
+            React.createElement("label", { htmlFor: config.for },
+                config.for,
+                React.createElement("input", { id: config.for, type: config.type, name: config.for, value: config.value, onChange: this.onChange.bind(this) }))));
     };
     return Input;
 }(React.Component));
